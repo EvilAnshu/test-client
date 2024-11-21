@@ -30,7 +30,8 @@ const Home: React.FC = () => {
       const res = await axios.post<ResponseData>(`${backendUrl}/bfhl`, data);
       setResponse(res.data);
       setError("");
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       setError("Invalid JSON input");
     }
   };
